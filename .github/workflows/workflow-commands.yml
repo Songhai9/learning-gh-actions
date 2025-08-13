@@ -2,8 +2,24 @@ name: Workflow commands
 on: [push]
 
 jobs:
-    testing-wf-commands:
+    display-wd-ubuntu:
         runs-on: ubuntu-latest
         steps:
-            - name: Setting an error message
-              run: echo "::error::Missing semicolon"
+            - name: Display Working Directory & List Files
+              run: |
+                pwd
+                ls -a
+                echo $GITHUB_SHA
+                echo $GITHUB_REPOSITORY
+                echo $GITHUB_WORKSPACE
+    
+    display-wd-windows:
+        runs-on: windows-latest
+        steps:
+            - name: Display Working Directory & List Files
+              run: |
+                pwd
+                ls -a
+                echo $GITHUB_SHA
+                echo $GITHUB_REPOSITORY
+                echo $GITHUB_WORKSPACE
