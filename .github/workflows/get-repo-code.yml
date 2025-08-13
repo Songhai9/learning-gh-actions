@@ -1,5 +1,5 @@
 name: Download Code Repo
-on:  
+on:  push
 
 jobs:
   checkout-and-display-files:
